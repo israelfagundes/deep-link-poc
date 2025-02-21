@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <script>
+        function openApp() {
+            const isAndroid = /android/i.test(navigator.userAgent);
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            // Monta o deep link com os parâmetros
+            const appLink = `myapp://profile/123`;
+            // Tenta abrir o app primeiro
+            window.location.href = appLink;
+            // Se o app não abrir em 2 segundos, redireciona para a loja
+            setTimeout(function () {
+                if (isAndroid) {
+                    window.location.href = "https://play.google.com/store/apps/details?id=com.maistodos.banking.business";
+                } else if (isIOS) {
+                    window.location.href = "https://apps.apple.com/us/app/maistodos-empresas/id6444662060";
+                } else {
+                    window.location.href = "https://www.maistodos.com.br";
+                }
+            }, 2000);
+        }
+        window.onload = openApp;
+    </script>
+</head>
+<body>
+    <p>Redirecionando para o app...</p>
+</body>
+</html>
