@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["com.maistodos.banking.business"],
+        "components": [
+          {
+            "/": "*",
+            "comment": "Matches all URLs."
+          }
+        ]
+      }
+    ],
+    "webcredentials": {
+      "apps": ["com.maistodos.banking.business"]
+    }
+  }
+}
